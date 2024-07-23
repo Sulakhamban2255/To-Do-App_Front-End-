@@ -1,15 +1,5 @@
-
-
 import React, { useEffect, useState } from "react";
-import {
-  ListGroup,
-  Button,
-  Container,
-  Badge,
-  Row,
-  Col,
-  Card,
-} from "react-bootstrap";
+import { ListGroup, Button, Container, Badge, Row, Col, Card } from "react-bootstrap";
 import { completeToDo, deleteToDo, getToDo } from "../Services/AllApi";
 import { toast } from "react-toastify";
 
@@ -48,14 +38,11 @@ function TodoList() {
   };
 
   return (
-    <Container
-      className="my-4 w-75 p-4 border rounded shadow-lg"
-      style={{ backgroundColor: "#f8f9fa" }}
-    >
-      <h1 className="text-center mb-4" style={{color:"blue"}}> To-Do List</h1>
+    <Container className="my-4 w-75 p-4 border rounded shadow-lg" style={{ backgroundColor: "#f8f9fa" }}>
+      <h1 className="text-center mb-4">To-Do List</h1>
       <Row>
         <Col>
-          <h2 style={{color:"blue"}}>Tasks</h2>
+          <h2>Tasks</h2>
           <ListGroup>
             {todoView.length > 0 ? (
               todoView.map((todo, index) => (
@@ -83,10 +70,7 @@ function TodoList() {
                         >
                           Complete
                         </Button>
-                        <Button
-                          variant="danger"
-                          onClick={() => toDoDel(todo.id)}
-                        >
+                        <Button variant="danger" onClick={() => toDoDel(todo.id)}>
                           Delete
                         </Button>
                       </div>
@@ -100,7 +84,7 @@ function TodoList() {
           </ListGroup>
         </Col>
         <Col>
-          <h2 style={{color:"blue"}}>Completed Tasks</h2>
+          <h2>Completed Tasks</h2>
           <ListGroup>
             {completedView.length > 0 ? (
               completedView.map((todo) => (
@@ -121,10 +105,7 @@ function TodoList() {
                       </Card.Title>
                       <Card.Text>{todo.Description}</Card.Text>
                       <div className="d-flex justify-content-end">
-                        <Button
-                          variant="danger"
-                          onClick={() => toDoDel(todo.id)}
-                        >
+                        <Button variant="danger" onClick={() => toDoDel(todo.id)}>
                           Delete
                         </Button>
                       </div>
@@ -143,3 +124,5 @@ function TodoList() {
 }
 
 export default TodoList;
+
+
